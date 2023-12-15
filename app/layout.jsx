@@ -1,7 +1,6 @@
 'use client'
 import { Inter, Lexend } from 'next/font/google'
 import clsx from 'clsx'
-import {AuthContext} from "@/components/contexts";
 
 import '@/styles/tailwind.css'
 import {useState} from "react";
@@ -30,9 +29,7 @@ export default function RootLayout({ children }) {
       )}
     >
       <body className="flex h-full flex-col">
-      <AuthContext.Provider value={{user, setUser}}>
         {children}
-      </AuthContext.Provider>
       </body>
     </html>
   )

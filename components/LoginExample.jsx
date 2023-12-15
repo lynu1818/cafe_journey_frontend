@@ -13,16 +13,12 @@
   ```
 */
 'use client'
-import {AuthContext} from "@/components/contexts";
-import {useContext, useState} from "react";
 import {useRouter} from "next/navigation";
-import { setCookie, getCookie} from "cookies-next";
 import { useCookies } from 'next-client-cookies';
 
 export default function LoginExample() {
     const cookies = useCookies();
     const router = useRouter()
-    const {setUser} = useContext(AuthContext);
 
     const handleSubmit = (e) => {
         e.preventDefault()

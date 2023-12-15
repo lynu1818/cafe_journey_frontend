@@ -2,12 +2,10 @@
 
 import {useRouter} from "next/navigation";
 import {useContext, useState} from "react";
-import {AuthContext} from "@/components/contexts";
 
 
 export default function SignUp() {
     const router = useRouter()
-    const {setUser} = useContext(AuthContext);
 
     const handleSubmit = (e) => {
         e.preventDefault()
