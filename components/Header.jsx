@@ -6,6 +6,7 @@ import {Bars3Icon, XMarkIcon} from '@heroicons/react/24/outline'
 import {jwtDecode} from "jwt-decode";
 import {useRouter} from "next/navigation";
 import {useCookies} from 'next-client-cookies';
+import {CookiesProvider} from "next-client-cookies/server";
 
 const navigation = [
     {name: 'Profile', href: '/profile'},
@@ -44,6 +45,7 @@ export function Header() {
     }
 
     return (
+        <CookiesProvider>
             <header className="bg-white">
                 <nav className="mx-auto flex max-w-7xl items-center justify-between gap-x-6 p-6 lg:px-8"
                      aria-label="Global">
@@ -187,5 +189,6 @@ export function Header() {
                     </Dialog.Panel>
                 </Dialog>
             </header>
+        </CookiesProvider>
     )
 }

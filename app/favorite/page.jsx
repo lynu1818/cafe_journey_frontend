@@ -1,5 +1,5 @@
 'use client'
-import {CookiesProvider} from "react-cookie";
+import {CookiesProvider} from "next-client-cookies/server";
 import {Header} from "@/components/Header";
 import {useEffect, useState} from "react";
 import {
@@ -11,7 +11,6 @@ import {
 } from "@react-google-maps/api";
 import {jwtDecode} from "jwt-decode";
 import {useCookies} from "next-client-cookies";
-import {useRouter} from "next/navigation";
 
 
 const mapStyles = {
@@ -137,7 +136,6 @@ const Map = ({favoriteCafes}) => {
 export default function FavoritePage() {
     const [favoriteCafes, setFavoriteCafes] = useState([]);
 
-    const router = useRouter();
     const cookies = useCookies();
     const token = cookies.get('access_token');
     let user = null;
