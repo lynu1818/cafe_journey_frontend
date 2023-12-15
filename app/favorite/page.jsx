@@ -1,5 +1,5 @@
 'use client'
-import {CookiesProvider} from "next-client-cookies/server";
+import {CookiesProvider} from "react-cookie";
 import {Header} from "@/components/Header";
 import {useEffect, useState} from "react";
 import {
@@ -22,7 +22,6 @@ const mapStyles = {
 
 function FavoriteCafeList({favoriteCafes}) {
     return (
-        <CookiesProvider>
         <div className="px-4 sm:px-6 lg:px-8">
             <div className="sm:flex sm:items-center">
                 {/*<div className="mt-4 sm:ml-16 sm:mt-0 sm:flex-none">*/}
@@ -78,7 +77,6 @@ function FavoriteCafeList({favoriteCafes}) {
                 </div>
             </div>
         </div>
-        </CookiesProvider>
     )
 }
 
@@ -102,7 +100,6 @@ const Map = ({favoriteCafes}) => {
     const center = {lat: 24.7961217, lng: 120.9966699};
 
     return (
-        <CookiesProvider>
         <div
             style={{
                 display: "flex",
@@ -133,7 +130,6 @@ const Map = ({favoriteCafes}) => {
                 ))}
             </GoogleMap>
         </div>
-        </CookiesProvider>
     );
 };
 
