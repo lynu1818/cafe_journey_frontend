@@ -4,8 +4,14 @@ import {Header} from "@/components/Header";
 import {useEffect, useState} from "react";
 import {
     Marker,
-    Autocomplete,
 } from "@react-google-maps/api";
+import {
+    GoogleMap,
+    useLoadScript
+} from "@react-google-maps/api";
+import {jwtDecode} from "jwt-decode";
+import {useCookies} from "next-client-cookies";
+import {useRouter} from "next/navigation";
 
 
 const mapStyles = {
@@ -13,20 +19,6 @@ const mapStyles = {
     height: '50%'
 };
 
-
-
-export default function Example() {
-    return (
-        <div className="bg-white">
-            <Calendar/>
-        </div>
-    )
-}
-
-const people = [
-    {name: 'Lindsay Walton', title: 'Front-end Developer', email: 'lindsay.walton@example.com', role: 'Member'},
-    // More people...
-]
 
 function FavoriteCafeList({favoriteCafes}) {
     return (
@@ -93,13 +85,7 @@ function classNames(...classes) {
     return classes.filter(Boolean).join(' ')
 }
 
-import {
-    GoogleMap,
-    useLoadScript
-} from "@react-google-maps/api";
-import {jwtDecode} from "jwt-decode";
-import {useCookies} from "next-client-cookies";
-import {useRouter} from "next/navigation";
+
 
 const Map = ({favoriteCafes}) => {
 
@@ -148,7 +134,7 @@ const Map = ({favoriteCafes}) => {
 };
 
 
-function Calendar() {
+export default function FavoritePage() {
     const [favoriteCafes, setFavoriteCafes] = useState([]);
 
     const router = useRouter();
