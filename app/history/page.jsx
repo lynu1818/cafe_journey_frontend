@@ -1,15 +1,4 @@
 'use client'
-import {Fragment} from 'react'
-import {
-    ChevronDownIcon,
-    ChevronLeftIcon,
-    ChevronRightIcon,
-    ClockIcon,
-    EllipsisHorizontalIcon,
-} from '@heroicons/react/20/solid'
-import {Menu, Transition} from '@headlessui/react'
-// import MapGoogle from "@/components/GoogleMap";
-// import {Map, GoogleApiWrapper, Marker} from "google-maps-react"
 
 const mapStyles = {
     width: '100%',

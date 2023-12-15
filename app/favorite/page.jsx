@@ -1,16 +1,6 @@
 'use client'
 
 import {
-    ChevronDownIcon,
-    ChevronLeftIcon,
-    ChevronRightIcon,
-    ClockIcon,
-    EllipsisHorizontalIcon,
-} from '@heroicons/react/20/solid'
-import {Menu, Transition} from '@headlessui/react'
-// import MapGoogle from "@/components/GoogleMap";
-// import {Map, GoogleApiWrapper, Marker} from "google-maps-react"
-import {
     Marker,
     Autocomplete,
 } from "@react-google-maps/api";
