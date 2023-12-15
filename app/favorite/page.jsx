@@ -1,6 +1,7 @@
 'use client'
 import {CookiesProvider} from "next-client-cookies/server";
-
+import {Header} from "@/components/Header";
+import {useEffect, useState} from "react";
 import {
     Marker,
     Autocomplete,
@@ -11,8 +12,7 @@ const mapStyles = {
     width: '100%',
     height: '50%'
 };
-import {Header} from "@/components/Header";
-import {useEffect, useState} from "react";
+
 
 
 export default function Example() {
@@ -70,15 +70,15 @@ function FavoriteCafeList({favoriteCafes}) {
                                             {cafe.name}
                                         </a>
                                     </td>
-                                <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">{cafe.address}</td>
-                                <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">{cafe.formatted_created_at}</td>
-                                <td className="relative whitespace-nowrap py-4 pl-3 pr-4 text-right text-sm font-medium sm:pr-0">
-                                <a href="#" className="text-amber-600 hover:text-amber-900">
-                                刪除
-                                </a>
-                                </td>
+                                    <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">{cafe.address}</td>
+                                    <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">{cafe.formatted_created_at}</td>
+                                    <td className="relative whitespace-nowrap py-4 pl-3 pr-4 text-right text-sm font-medium sm:pr-0">
+                                        <a href="#" className="text-amber-600 hover:text-amber-900">
+                                            刪除
+                                        </a>
+                                    </td>
                                 </tr>
-                                ))}
+                            ))}
                             </tbody>
                         </table>
                     </div>
@@ -191,9 +191,9 @@ function Calendar() {
     return (
         <>
             <CookiesProvider>
-            <Header/>
-            <Map favoriteCafes={favoriteCafes}/>
-            <FavoriteCafeList favoriteCafes={favoriteCafes}/>
+                <Header/>
+                <Map favoriteCafes={favoriteCafes}/>
+                <FavoriteCafeList favoriteCafes={favoriteCafes}/>
             </CookiesProvider>
         </>
     )
