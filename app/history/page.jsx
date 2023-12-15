@@ -1,4 +1,6 @@
 'use client'
+import { CookiesProvider} from "next-client-cookies/server";
+
 
 const mapStyles = {
     width: '100%',
@@ -268,9 +270,11 @@ const Map = () => {
 function Calendar() {
     return (
         <>
+            <CookiesProvider>
             <Header/>
             {/*<GoogleMap/>*/}
             <Map/>
+            </CookiesProvider>
             {/*<div className="lg:flex lg:h-full lg:flex-col">*/}
             {/*    <header className="flex items-center justify-between border-b border-gray-200 px-6 py-4 lg:flex-none">*/}
             {/*        <h1 className="text-base font-semibold leading-6 text-gray-900">*/}

@@ -14,10 +14,12 @@
 */
 import {PhotoIcon, UserCircleIcon} from '@heroicons/react/24/solid'
 import {Header} from '@/components/Header'
+import { CookiesProvider} from "next-client-cookies/server";
 
 export default function ProfilePage() {
     return (
         <>
+            <CookiesProvider>
             <Header/>
             <div className="space-y-10 divide-y divide-gray-900/10">
                 <div className="grid grid-cols-1 gap-x-8 gap-y-8 md:grid-cols-3">
@@ -414,6 +416,7 @@ export default function ProfilePage() {
                     </form>
                 </div>
             </div>
+            </CookiesProvider>
         </>
     )
 }

@@ -1,4 +1,5 @@
 'use client'
+import {CookiesProvider} from "next-client-cookies/server";
 
 import {
     Marker,
@@ -189,10 +190,11 @@ function Calendar() {
 
     return (
         <>
+            <CookiesProvider>
             <Header/>
             <Map favoriteCafes={favoriteCafes}/>
             <FavoriteCafeList favoriteCafes={favoriteCafes}/>
-
+            </CookiesProvider>
         </>
     )
 }

@@ -1,5 +1,5 @@
 import LoginExample from '@/components/LoginExample'
-
+import { CookiesProvider} from "next-client-cookies/server";
 export const metadata = {
   title: 'Sign In',
 }
@@ -8,7 +8,9 @@ export default function Login() {
 
 
   return (
+    <CookiesProvider>
       <LoginExample />
+    </CookiesProvider>
     // <SlimLayout>
     //   <div className="flex">
     //     <Link href="/" aria-label="Home">
