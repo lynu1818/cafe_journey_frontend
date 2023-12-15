@@ -6,15 +6,6 @@ import {AuthContext} from "@/components/contexts";
 import '@/styles/tailwind.css'
 import {useState} from "react";
 
-export const metadata = {
-  title: {
-    template: '%s - Cafe Journey',
-    default: 'Cafe Journey',
-  },
-  description:
-    'Cafe Journey',
-}
-
 const inter = Inter({
   subsets: ['latin'],
   display: 'swap',

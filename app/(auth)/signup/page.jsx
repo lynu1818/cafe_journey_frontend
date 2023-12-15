@@ -9,9 +9,6 @@ import {useRouter} from "next/navigation";
 import {useContext, useState} from "react";
 import {AuthContext} from "@/components/contexts";
 
-export const metadata = {
-  title: 'Sign Up',
-}
 
 export default function SignUp() {
     const router = useRouter()
