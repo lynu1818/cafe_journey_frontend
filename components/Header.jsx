@@ -21,10 +21,9 @@ export function Header() {
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
     const [user, setUser] = useState(null);
     const cookies = useCookies();
+    const token = cookies.get('access_token');
 
     useEffect(() => {
-        const token = cookies.get('access_token');
-        // const token = localStorage.getItem('access_token');
         if (token) {
             try {
                 const decoded = jwtDecode(token);
@@ -33,19 +32,17 @@ export function Header() {
                 console.error('Error decoding token:', error);
             }
         }
-    }, []);
+    }, [token]);
 
 
     function handleLogout(e) {
         e.preventDefault();
-        // localStorage.removeItem('access_token');
         cookies.remove('access_token');
         setUser(null);
         router.replace("/")
     }
 
     return (
-        <CookiesProvider>
             <header className="bg-white">
                 <nav className="mx-auto flex max-w-7xl items-center justify-between gap-x-6 p-6 lg:px-8"
                      aria-label="Global">
@@ -189,6 +186,5 @@ export function Header() {
                     </Dialog.Panel>
                 </Dialog>
             </header>
-        </CookiesProvider>
     )
 }

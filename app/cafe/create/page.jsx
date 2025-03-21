@@ -7,7 +7,6 @@ import {
     Marker,
     Autocomplete,
 } from "@react-google-maps/api";
-import {GoogleApiWrapper} from "google-maps-react";
 import {Header} from '@/components/Header'
 import {useRouter} from "next/navigation";
 
@@ -406,6 +405,4 @@ const CreateCafePage = () => {
     );
 };
 
-export default GoogleApiWrapper({
-    apiKey: "AIzaSyDavR0jMSo5C4urskDvTDDmemhR8pKILOM"
-})(CreateCafePage);
+export default CreateCafePage;

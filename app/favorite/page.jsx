@@ -1,5 +1,4 @@
 'use client'
-import {CookiesProvider} from "next-client-cookies/server";
 import {Header} from "@/components/Header";
 import {useEffect, useState} from "react";
 import {
@@ -149,36 +148,32 @@ export default function FavoritePage() {
     }
     console.log("user: ", user);
 
-    function fetchUserFavorites() {
-        const userId = user.id;
+    function fetchUserFavorites(userId) {
         fetch(`http://localhost:3001/api/1.0/user/favorite?userId=${userId}`, {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json',
             }
 
-        }).then((response) => response.json())
-            .then((data) => {
-                console.log("fetch fav cafes data", data);
-                setFavoriteCafes(data);
-            }).catch((err) => {
-            console.log("Error fetching cafes: ", err);
-        });
+        })
+        .then((res) => res.json())
+        .then((data) => setFavoriteCafes(data))
+        .catch((err) => console.error("Error fetching cafes: ", err));
 
     }
 
     useEffect(() => {
-        fetchUserFavorites();
-    }, []);
+      if (user?.id) {
+          fetchUserFavorites(user.id);
+      }
+  }, []);
 
 
     return (
         <>
-            <CookiesProvider>
                 <Header/>
                 <Map favoriteCafes={favoriteCafes}/>
                 <FavoriteCafeList favoriteCafes={favoriteCafes}/>
-            </CookiesProvider>
         </>
     )
 }

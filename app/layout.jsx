@@ -1,9 +1,9 @@
-'use client'
 import { Inter, Lexend } from 'next/font/google'
 import clsx from 'clsx'
 
 import '@/styles/tailwind.css'
-import {useState} from "react";
+import { cookies } from 'next/headers'
+import { CookiesProvider } from 'next-client-cookies/server'
 
 const inter = Inter({
   subsets: ['latin'],
@@ -18,7 +18,7 @@ const lexend = Lexend({
 })
 
 export default function RootLayout({ children }) {
-  const [user, setUser] = useState(null);
+  const cookieStore = cookies();
   return (
     <html
       lang="en"
@@ -29,7 +29,9 @@ export default function RootLayout({ children }) {
       )}
     >
       <body className="flex h-full flex-col">
-        {children}
+        <CookiesProvider cookies={cookieStore}>
+          {children}
+        </CookiesProvider>
       </body>
     </html>
   )

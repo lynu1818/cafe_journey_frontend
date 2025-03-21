@@ -1,5 +1,5 @@
 import LoginExample from '@/components/LoginExample'
-import { CookiesProvider} from "next-client-cookies/server";
+import { CookiesProvider } from "next-client-cookies/server";
 export const metadata = {
   title: 'Sign In',
 }
