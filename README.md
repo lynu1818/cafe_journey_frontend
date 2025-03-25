@@ -5,7 +5,7 @@ Café Journey is a full-stack platform designed for café lovers to discover, re
 > This frontend project is built with Next.js and TailwindCSS.
 For the backend, visit 👉 [cafe_journey_backend](https://github.com/lynu1818/cafe_journey_backend)
 
-## Demo
+## [Demo](https://youtube.com/shorts/l3EZqnaxDYw)
 
 ![Demo](cafe_journey_demo(speedup).gif)
 
