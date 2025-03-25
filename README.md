@@ -7,7 +7,7 @@ For the backend, visit 👉 [cafe_journey_backend](https://github.com/lynu1818/c
 
 ## Demo
 
-![Demo](cafe_journey_demo.gif)
+![Demo](cafe_journey_demo(speedup).gif)
 
 
 ## Key Features (User Side)
